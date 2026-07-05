@@ -24,17 +24,17 @@ export default function About() {
       icon: Briefcase,
     },
     {
-      id: 'availability',
-      label: 'Availability',
+      id: 'whatsapp',
+      label: 'WhatsApp',
       value: personalInfo.availability,
       icon: Clock,
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-14 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
           {/* Left Side: Photo with Experience Badge */}
           <div className="lg:col-span-5 flex justify-center">
@@ -43,7 +43,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6 }}
-              className="relative w-full max-w-[380px] aspect-[3/4] rounded-[2rem] overflow-hidden shadow-xl shadow-gray-200/50 group"
+              className="relative w-full max-w-[320px] sm:max-w-[380px] aspect-[3/4] rounded-3xl sm:rounded-[2rem] overflow-hidden shadow-xl shadow-gray-200/50 group"
             >
               <img
                 src={profileImg}
@@ -53,8 +53,8 @@ export default function About() {
               />
               
               {/* Overlay Badge exactly like screenshot */}
-              <div className="absolute bottom-6 left-6 right-6 bg-orange-500/95 backdrop-blur-sm text-white p-5 rounded-2xl flex items-center gap-4 border border-orange-400/30 shadow-lg shadow-orange-500/20">
-                <div className="text-4xl font-extrabold tracking-tight">2+</div>
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-orange-500/95 backdrop-blur-sm text-white p-4 sm:p-5 rounded-2xl flex items-center gap-4 border border-orange-400/30 shadow-lg shadow-orange-500/20">
+                <div className="text-3xl sm:text-4xl font-extrabold tracking-tight">2+</div>
                 <div className="text-sm font-semibold leading-tight text-orange-50">
                   Years<br />Experience
                 </div>
@@ -75,7 +75,7 @@ export default function About() {
               <span className="text-xs font-bold uppercase tracking-widest text-orange-500">
                 About Me
               </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
                 Building digital experiences that make a difference
               </h2>
             </div>
@@ -84,7 +84,7 @@ export default function About() {
             <div className="w-16 h-1 bg-orange-500 rounded-full" />
 
             {/* Descriptions */}
-            <div className="space-y-4 text-gray-600 leading-relaxed text-base sm:text-lg">
+            <div className="space-y-4 text-gray-600 leading-relaxed text-sm sm:text-lg">
               <p>{personalInfo.detailedBio}</p>
               <p>{personalInfo.experienceSummary}</p>
             </div>
@@ -96,16 +96,16 @@ export default function About() {
                 return (
                   <div
                     key={card.id}
-                    className="flex items-center gap-4 p-4 bg-gray-50/50 hover:bg-gray-50 rounded-2xl border border-gray-100 transition-colors duration-300"
+                    className="flex min-w-0 items-center gap-4 p-4 bg-gray-50/50 hover:bg-gray-50 rounded-2xl border border-gray-100 transition-colors duration-300"
                   >
                     <div className="w-12 h-12 rounded-xl bg-orange-50 border border-orange-100/50 flex items-center justify-center text-orange-600 shrink-0 shadow-sm">
                       <IconComponent className="w-5 h-5" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <span className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">
                         {card.label}
                       </span>
-                      <span className="block text-base font-bold text-gray-800">
+                      <span className="block break-words text-sm sm:text-base font-bold text-gray-800">
                         {card.value}
                       </span>
                     </div>

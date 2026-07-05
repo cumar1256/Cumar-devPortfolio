@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Github, Linkedin, Dribbble, Palette, ArrowUpRight, Download } from 'lucide-react';
+import { Github, Linkedin, Dribbble, Palette, Music2, ArrowUpRight, Download } from 'lucide-react';
 import { personalInfo } from '../data';
 import profileImg from '../assets/images/omar.jpeg';
 
@@ -42,14 +42,14 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden bg-gradient-to-b from-gray-50/50 via-white to-gray-50/20"
+      className="relative min-h-screen pt-24 sm:pt-28 pb-14 sm:pb-16 flex items-center overflow-hidden bg-gradient-to-b from-gray-50/50 via-white to-gray-50/20"
     >
       {/* Decorative Background Elements */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-blue-50/50 rounded-full blur-3xl -z-10" />
+      <div className="absolute top-1/4 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-orange-100/30 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-10 left-0 sm:left-10 w-56 h-56 sm:w-72 sm:h-72 bg-blue-50/50 rounded-full blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Hero Text */}
           <motion.div
             className="lg:col-span-7 space-y-6 text-center lg:text-left"
@@ -67,7 +67,7 @@ export default function Hero() {
             {/* Main Heading */}
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight"
+              className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight"
             >
               Cumar <span className="text-orange-500">Saciid</span>
             </motion.h1>
@@ -75,7 +75,7 @@ export default function Hero() {
             {/* Subheading */}
             <motion.h2
               variants={itemVariants}
-              className="text-xl sm:text-2xl font-bold text-gray-800"
+              className="text-lg sm:text-2xl font-bold text-gray-800"
             >
               {personalInfo.title}
             </motion.h2>
@@ -83,7 +83,7 @@ export default function Hero() {
             {/* Description */}
             <motion.p
               variants={itemVariants}
-              className="text-gray-500 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg leading-relaxed"
+              className="text-gray-500 max-w-xl mx-auto lg:mx-0 text-sm sm:text-lg leading-relaxed"
             >
               {personalInfo.bio}
             </motion.p>
@@ -91,14 +91,14 @@ export default function Hero() {
             {/* Socials */}
             <motion.div
               variants={itemVariants}
-              className="flex items-center justify-center lg:justify-start gap-4 pt-2"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2"
             >
               <a
                 href={personalInfo.socials.github}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-orange-500 hover:border-orange-500/40 hover:bg-orange-50/10 transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-orange-500 hover:border-orange-500/40 hover:bg-orange-50/10 transition-all duration-300 hover:scale-110"
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -107,16 +107,25 @@ export default function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-orange-500 hover:border-orange-500/40 hover:bg-orange-50/10 transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-orange-500 hover:border-orange-500/40 hover:bg-orange-50/10 transition-all duration-300 hover:scale-110"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href={personalInfo.socials.tiktok}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="TikTok"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-orange-500 hover:border-orange-500/40 hover:bg-orange-50/10 transition-all duration-300 hover:scale-110"
+              >
+                <Music2 className="w-5 h-5" />
               </a>
               <a
                 href={personalInfo.socials.behance}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Behance"
-                className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-orange-500 hover:border-orange-500/40 hover:bg-orange-50/10 transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-orange-500 hover:border-orange-500/40 hover:bg-orange-50/10 transition-all duration-300 hover:scale-110"
               >
                 <Palette className="w-5 h-5" />
               </a>
@@ -125,7 +134,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Dribbble"
-                className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-orange-500 hover:border-orange-500/40 hover:bg-orange-50/10 transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-orange-500 hover:border-orange-500/40 hover:bg-orange-50/10 transition-all duration-300 hover:scale-110"
               >
                 <Dribbble className="w-5 h-5" />
               </a>
@@ -155,7 +164,7 @@ export default function Hero() {
           {/* Hero Image Graphic */}
           <div className="lg:col-span-5 flex justify-center items-center relative mt-8 lg:mt-0">
             {/* Background circular framing exactly like the screenshot */}
-            <div className="relative w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[480px] md:h-[480px]">
+            <div className="relative w-[min(82vw,320px)] aspect-square sm:w-[400px] md:w-[460px] lg:w-[480px]">
               
               {/* Giant backdrop circle border decoration */}
               <div className="absolute inset-0 rounded-full border-2 border-dashed border-orange-200/50 -z-10 animate-[spin_100s_linear_infinite]" />
@@ -181,7 +190,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ type: 'spring', duration: 1, delay: 0.3 }}
-                className="w-full h-full rounded-full overflow-hidden border-8 border-white shadow-xl relative"
+                className="w-full h-full rounded-full overflow-hidden border-4 sm:border-8 border-white shadow-xl relative"
               >
                 <img
                   src={profileImg}
@@ -192,7 +201,7 @@ export default function Hero() {
               </motion.div>
 
               {/* Mini tag or accent */}
-              <div className="absolute -bottom-2 right-1/4 bg-white px-4 py-2 rounded-2xl shadow-lg border border-gray-100 flex items-center gap-1.5 animate-bounce">
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 sm:left-auto sm:right-1/4 sm:translate-x-0 bg-white px-3 sm:px-4 py-2 rounded-2xl shadow-lg border border-gray-100 flex items-center gap-1.5 whitespace-nowrap animate-bounce">
                 <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-xs font-bold text-gray-800">Available to Work</span>
               </div>

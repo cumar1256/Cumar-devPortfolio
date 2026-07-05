@@ -60,18 +60,18 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
           <button
             id="logo-btn"
             onClick={() => handleNavClick('#home', 'Home')}
-            className="flex items-center gap-2 cursor-pointer group"
+            className="flex min-w-0 items-center gap-2 cursor-pointer group"
           >
             <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center border border-orange-200 shadow-sm transition-all duration-300 group-hover:scale-105">
               <span className="font-extrabold text-orange-600 text-lg">CS</span>
             </div>
-            <span className="font-bold text-gray-900 text-xl tracking-tight">
+            <span className="font-bold text-gray-900 text-lg sm:text-xl tracking-tight truncate">
               Cumar <span className="text-orange-500">Saciid</span>
             </span>
           </button>
 
           {/* Desktop Nav */}
-          <nav id="desktop-nav" className="hidden md:flex items-center gap-8">
+          <nav id="desktop-nav" className="hidden md:flex items-center gap-4 lg:gap-8">
             {navItems.map((item) => {
               const isActive = activeSection === item.label.toLowerCase();
               return (
@@ -97,7 +97,7 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
             <button
               id="cta-hire-me-header"
               onClick={() => handleNavClick('#contact', 'Contact')}
-              className="bg-orange-500 hover:bg-orange-600 text-white font-medium text-sm px-6 py-2.5 rounded-full transition-all duration-300 shadow-md shadow-orange-500/15 hover:shadow-orange-500/25 active:scale-95 cursor-pointer"
+              className="bg-orange-500 hover:bg-orange-600 text-white font-medium text-sm px-5 lg:px-6 py-2.5 rounded-full transition-all duration-300 shadow-md shadow-orange-500/15 hover:shadow-orange-500/25 active:scale-95 cursor-pointer"
             >
               Hire Me
             </button>
@@ -118,7 +118,7 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div id="mobile-menu" className="md:hidden bg-white/98 backdrop-blur-md border-b border-gray-100 shadow-lg py-4 px-4 space-y-2">
+        <div id="mobile-menu" className="md:hidden max-h-[calc(100vh-72px)] overflow-y-auto bg-white/98 backdrop-blur-md border-b border-gray-100 shadow-lg py-4 px-4 space-y-2">
           {navItems.map((item) => {
             const isActive = activeSection === item.label.toLowerCase();
             return (

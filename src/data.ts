@@ -10,12 +10,14 @@ export const personalInfo: PersonalInfo = {
   experienceYears: 2,
   location: "Somalia",
   education: "Computer Science",
-  availability: "Freelance",
+  availability: "+252 617624424",
   email: "omarwhatbest@gmail.com",
-  phone: "+252 61 XXXXXXX",
+  phone: "+252 617624424",
+  whatsapp: "https://wa.me/252617624424",
   socials: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    github: "https://github.com/cumar1256",
+    linkedin: "https://www.linkedin.com/in/omar-said-dev-690892418",
+    tiktok: "https://www.tiktok.com/@cumar.saciid.dev",
     behance: "https://behance.net",
     dribbble: "https://dribbble.com"
   }
@@ -99,7 +101,7 @@ export const projects: Project[] = [
     title: "SaaS Analytics Dashboard",
     category: "Frontend Development",
     description: "A fast, fully-responsive dashboard tracking operational SaaS metrics, featuring charts and filters.",
-    imageUrl: "https://picsum.photos/seed/dash/600/450",
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
     demoUrl: "#",
     githubUrl: "https://github.com",
     tags: ["React", "Tailwind", "Recharts"]
@@ -109,7 +111,7 @@ export const projects: Project[] = [
     title: "Eco-Friendly E-Commerce",
     category: "Web Design",
     description: "Modern, minimal design concept for a green organic lifestyle brand, with seamless checkouts.",
-    imageUrl: "https://picsum.photos/seed/eco/600/450",
+    imageUrl: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80",
     demoUrl: "#",
     tags: ["Figma", "UI/UX", "Prototyping"]
   },
@@ -118,7 +120,7 @@ export const projects: Project[] = [
     title: "Brand Identity - Cumar Saciid",
     category: "Logo Design",
     description: "A comprehensive brand manual and stationery design, presenting a bold typographic monogram.",
-    imageUrl: "https://picsum.photos/seed/brand/600/450",
+    imageUrl: "https://images.unsplash.com/photo-1635405074683-96d6921a2a68?auto=format&fit=crop&w=900&q=80",
     demoUrl: "#",
     tags: ["Illustrator", "Branding", "Vector"]
   },
@@ -127,7 +129,7 @@ export const projects: Project[] = [
     title: "Agency Promotional Poster",
     category: "Graphic Design",
     description: "High-impact visual composition created for an international creative studio launch campaign.",
-    imageUrl: "https://picsum.photos/seed/poster/600/450",
+    imageUrl: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=900&q=80",
     demoUrl: "#",
     tags: ["Photoshop", "Typography", "Composition"]
   },
@@ -136,7 +138,7 @@ export const projects: Project[] = [
     title: "Creative Agency Website",
     category: "Frontend Development",
     description: "Interactive portfolio showcase for developers with smooth, framer-motion page transitions.",
-    imageUrl: "https://picsum.photos/seed/agency/600/450",
+    imageUrl: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=80",
     demoUrl: "#",
     githubUrl: "https://github.com",
     tags: ["React", "Motion", "Tailwind"]
@@ -146,7 +148,7 @@ export const projects: Project[] = [
     title: "Smart Home Mobile App UI",
     category: "Web Design",
     description: "Intuitive mobile app UI design focusing on custom smart device controls, dark and light presets.",
-    imageUrl: "https://picsum.photos/seed/smarthome/600/450",
+    imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
     demoUrl: "#",
     tags: ["Figma", "Mobile UI", "UX Research"]
   }

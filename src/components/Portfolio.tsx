@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, Github, Eye } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { projects } from '../data';
 
 export default function Portfolio() {
@@ -13,27 +13,28 @@ export default function Portfolio() {
     : projects.filter(p => p.category === selectedCategory);
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-50/50">
+    <section id="portfolio" className="py-14 sm:py-20 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-xl mx-auto mb-12 space-y-2">
+        <div className="text-center max-w-xl mx-auto mb-10 sm:mb-12 space-y-2">
           <span className="text-xs font-bold uppercase tracking-widest text-orange-500">
             My Portfolio
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
             Selected Works
           </h2>
           <div className="w-16 h-1 bg-orange-500 rounded-full mx-auto mt-4" />
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap justify-center items-center gap-2 mb-12">
+        <div className="-mx-4 sm:mx-0 mb-10 sm:mb-12 overflow-x-auto px-4 sm:px-0">
+          <div className="flex w-max min-w-full sm:w-auto sm:min-w-0 sm:flex-wrap justify-start sm:justify-center items-center gap-2 pb-1">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
+              className={`shrink-0 px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
                 selectedCategory === category
                   ? 'bg-orange-500 text-white shadow-md shadow-orange-500/15'
                   : 'bg-white text-gray-600 hover:text-orange-500 hover:bg-orange-50/20 border border-gray-100'
@@ -42,12 +43,13 @@ export default function Portfolio() {
               {category}
             </button>
           ))}
+          </div>
         </div>
 
         {/* Grid Container */}
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
@@ -58,7 +60,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                className="bg-white rounded-3xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
+                className="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
               >
                 {/* Project Image Container */}
                 <div className="relative overflow-hidden aspect-video">
@@ -93,7 +95,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Info Area */}
-                <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                <div className="p-5 sm:p-6 space-y-4 flex-grow flex flex-col justify-between">
                   <div className="space-y-2">
                     <span className="text-[10px] font-bold text-orange-500 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded-full inline-block">
                       {project.category}

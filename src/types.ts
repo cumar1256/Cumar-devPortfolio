@@ -37,9 +37,11 @@ export interface PersonalInfo {
   availability: string;
   email: string;
   phone: string;
+  whatsapp: string;
   socials: {
     github: string;
     linkedin: string;
+    tiktok: string;
     behance: string;
     dribbble: string;
   };
