@@ -20,7 +20,7 @@ export default function Contact() {
     setFormState(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -32,9 +32,32 @@ export default function Contact() {
 
     setIsSubmitting(true);
 
-    // Simulate sending API request
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Deliver the message by email via FormSubmit.
+      // Submissions are sent to the site owner's inbox: cumarsaciid845@gmail.com
+      const response = await fetch('https://formsubmit.co/ajax/cumarsaciid845@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          subject: formState.subject || 'New message from portfolio website',
+          message: formState.message,
+          _subject: `New portfolio message from ${formState.name}`,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (!response.ok || (data && data.success !== 'true' && data.success !== true)) {
+        throw new Error('Message could not be delivered');
+      }
+
       setIsSuccess(true);
       setFormState({
         name: '',
@@ -47,7 +70,11 @@ export default function Contact() {
       setTimeout(() => {
         setIsSuccess(false);
       }, 5000);
-    }, 1500);
+    } catch {
+      setError('Sorry, your message could not be sent. Please try again, or contact me directly by email or WhatsApp.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -149,7 +176,7 @@ export default function Contact() {
                   <div className="space-y-2">
                     <h4 className="text-xl font-bold text-gray-900">Message Sent Successfully!</h4>
                     <p className="text-gray-500 text-sm max-w-sm">
-                      Thank you for reaching out, Cumar. Your message has been received, and I'll respond shortly.
+                      Thank you for reaching out. Your message has been sent to my email, and I'll respond shortly.
                     </p>
                   </div>
                 </motion.div>
