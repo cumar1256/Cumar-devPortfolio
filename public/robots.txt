@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cumar-portfolio.netlify.app/sitemap.xml
